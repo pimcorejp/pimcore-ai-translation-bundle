@@ -30,7 +30,7 @@ services:
     # LicenseService
     pimcorejp\TranslationBundle\Service\LicenseService:
         arguments:
-            $productId: '%env(PIMCORE_STORE_PRODUCT_ID)%'
+            $productId: '%env(default::PIMCORE_STORE_PRODUCT_ID)%'
 
     # UsageTrackingService
     pimcorejp\TranslationBundle\Service\UsageTrackingService:
