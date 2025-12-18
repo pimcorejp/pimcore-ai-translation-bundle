@@ -11,7 +11,7 @@ class GeminiTranslationService
     private string $apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent';
     private string $translationContext;
 
-    public function __construct(HttpClientInterface $httpClient, string $geminiApiKey, string $translationContext = '')
+    public function __construct(HttpClientInterface $httpClient, ?string $geminiApiKey = null, ?string $translationContext = '')
     {
         $this->httpClient = $httpClient;
         $this->apiKey = $geminiApiKey;

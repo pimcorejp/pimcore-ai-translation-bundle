@@ -10,7 +10,7 @@ class DeeplTranslationService
     private string $apiKey;
     private string $apiUrl;
 
-    public function __construct(HttpClientInterface $httpClient, string $deeplApiKey, bool $isFreeApi = false)
+    public function __construct(HttpClientInterface $httpClient, ?string $deeplApiKey = null, bool $isFreeApi = false)
     {
         $this->httpClient = $httpClient;
         $this->apiKey = $deeplApiKey;

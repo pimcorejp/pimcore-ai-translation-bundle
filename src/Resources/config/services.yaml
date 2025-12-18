@@ -17,16 +17,16 @@ services:
     pimcorejp\TranslationBundle\Service\DeeplTranslationService:
         arguments:
             $httpClient: '@http_client'
-            $deeplApiKey: '%env(DEEPL_API_KEY)%'
+            $deeplApiKey: '%env(default::DEEPL_API_KEY)%'
             $isFreeApi: '%env(bool:DEEPL_FREE_API)%'
 
     # GeminiTranslationService
     pimcorejp\TranslationBundle\Service\GeminiTranslationService:
         arguments:
             $httpClient: '@http_client'
-            $geminiApiKey: '%env(GEMINI_API_KEY)%'
-            $translationContext: '%env(GEMINI_TRANSLATION_CONTEXT)%'
-
+            $geminiApiKey: '%env(default::GEMINI_API_KEY)%'
+            $translationContext: '%env(default::GEMINI_TRANSLATION_CONTEXT)%'
+            
     # LicenseService
     pimcorejp\TranslationBundle\Service\LicenseService:
         arguments:
