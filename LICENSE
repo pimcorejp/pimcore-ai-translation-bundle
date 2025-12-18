@@ -1,0 +1,98 @@
+Proprietary License
+
+Copyright (c) 2025 PIMCOREJP
+
+IMPORTANT NOTICE:
+This software is developed and maintained by an independent third-party developer.
+This is NOT an official PIMCORE product. The developer is not affiliated with,
+endorsed by, or sponsored by PIMCORE (https://pimcore.com).
+
+"PIMCORE" is a registered trademark of Pimcore GmbH.
+This software is a community contribution compatible with PIMCORE platform.
+
+All rights reserved.
+
+PIMCORE AI Translation Bundle License Agreement
+
+1. GRANT OF LICENSE
+
+This software and associated documentation files (the "Software") are licensed, 
+not sold. Subject to the terms of this Agreement, PIMCORE Japan grants you a 
+limited, non-exclusive, non-transferable license to use the Software.
+
+2. API REQUIREMENTS
+
+This Software requires external API keys that you must obtain separately:
+- DeepL API Key (Free or Pro tier from https://www.deepl.com/pro-api)
+- Google Gemini API Key (from https://ai.google.dev/)
+
+DeepL API usage:
+- Both Free and Pro tiers: Unlimited translations through this Software
+- Character limits are determined by your DeepL API plan
+
+Google Gemini API usage:
+- Governed by your Google API quota and billing settings
+
+3. LICENSE TIERS
+
+3.1 Free Tier
+- Limited to 10 Gemini API calls per month (enforced by this Software)
+- DeepL API: Unlimited calls (subject to your DeepL API plan limits)
+- No technical support
+- For evaluation and personal use
+
+3.2 Pro Tier (Paid)
+- Unlimited Gemini API calls (subject to your Google API quota)
+- DeepL API: Unlimited calls (subject to your DeepL API plan limits)
+- Priority technical support
+- Commercial use allowed
+- Requires valid license key from PIMCORE Store
+
+4. RESTRICTIONS
+
+You may NOT:
+- Modify, adapt, translate, or create derivative works
+- Reverse engineer, decompile, or disassemble the Software
+- Remove or alter any proprietary notices or labels
+- Distribute, sublicense, or transfer the Software to third parties
+- Use the Software without a valid license key (for Pro Tier)
+- Circumvent the usage limitations of the Free Tier
+
+5. THIRD-PARTY SERVICES
+
+You are responsible for:
+- Obtaining and maintaining your own API keys
+- Complying with DeepL and Google's terms of service
+- Any costs associated with API usage
+- Data privacy and security when using external APIs
+
+6. TERMINATION
+
+This license is effective until terminated. Your rights under this license 
+will terminate automatically without notice if you fail to comply with any 
+term of this Agreement.
+
+7. WARRANTY DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+8. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL PIMCORE JAPAN BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+THE SOFTWARE.
+
+9. GOVERNING LAW
+
+This Agreement shall be governed by the laws of Japan.
+
+10. CONTACT INFORMATION
+
+For licensing inquiries and support:
+GitHub Issues: https://github.com/pimcorejp/pimcore-ai-translation-bundle/issues
+Email: support@pimcorejp.com
+
+Last updated: December 17, 2025

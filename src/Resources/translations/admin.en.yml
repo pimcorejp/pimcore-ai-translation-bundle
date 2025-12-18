@@ -1,0 +1,22 @@
+# Translation Bundle - English Translations
+
+translation_bundle_settings: 'Translation Bundle Settings'
+
+# License Section
+license_information: 'License Information'
+current_plan: 'Current Plan'
+license_expires: 'License Expires'
+activate_pro_license: 'Activate Pro License'
+license_key: 'License Key'
+validate_license: 'Validate License'
+clear_cache: 'Clear Cache'
+
+# Usage Statistics
+usage_statistics: 'Usage Statistics'
+gemini_this_month: 'Gemini (This Month)'
+deepl_this_month: 'DeepL (This Month)'
+
+# Messages
+error: 'Error'
+success: 'Success'
+failed_to_load_license_info: 'Failed to load license information'

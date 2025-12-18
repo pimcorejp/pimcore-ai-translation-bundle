@@ -1,0 +1,41 @@
+/* Translation Bundle - Button Styles */
+
+.translation-button-toolbar {
+    margin-bottom: 10px;
+    padding: 5px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.translation-button {
+    margin-right: 5px;
+}
+
+.translation-button-menu .x-menu-item-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Loading mask customization */
+.translation-loading-mask {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.translation-loading-mask .x-mask-msg {
+    border-color: #0088cc;
+    background-color: #fff;
+}
+
+/* Success notification */
+.translation-success {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+/* Error notification */
+.translation-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}

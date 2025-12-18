@@ -1,0 +1,7 @@
+# Translation Bundle Configuration
+# このファイルは Resources/config/pimcore/ に配置することで自動読み込みされます
+
+# 必要に応じて設定を追加
+# 例：
+# pimcore_translation_bundle:
+#     enabled: true

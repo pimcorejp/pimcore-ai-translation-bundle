@@ -1,0 +1,22 @@
+# Translation Bundle - 日本語翻訳
+
+translation_bundle_settings: 'Translation Bundle 設定'
+
+# License Section
+license_information: 'ライセンス情報'
+current_plan: '現在のプラン'
+license_expires: 'ライセンス有効期限'
+activate_pro_license: 'Proライセンスの有効化'
+license_key: 'ライセンスキー'
+validate_license: 'ライセンスを検証'
+clear_cache: 'キャッシュをクリア'
+
+# Usage Statistics
+usage_statistics: '使用状況'
+gemini_this_month: 'Gemini（今月）'
+deepl_this_month: 'DeepL（今月）'
+
+# Messages
+error: 'エラー'
+success: '成功'
+failed_to_load_license_info: 'ライセンス情報の読み込みに失敗しました'

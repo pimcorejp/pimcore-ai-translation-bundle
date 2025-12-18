@@ -1,0 +1,41 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # Controllers
+    pimcorejp\TranslationBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    # Services
+    pimcorejp\TranslationBundle\Service\:
+        resource: '../../Service'
+
+    # DeeplTranslationService
+    pimcorejp\TranslationBundle\Service\DeeplTranslationService:
+        arguments:
+            $httpClient: '@http_client'
+            $deeplApiKey: '%env(DEEPL_API_KEY)%'
+            $isFreeApi: '%env(bool:DEEPL_FREE_API)%'
+
+    # GeminiTranslationService
+    pimcorejp\TranslationBundle\Service\GeminiTranslationService:
+        arguments:
+            $httpClient: '@http_client'
+            $geminiApiKey: '%env(GEMINI_API_KEY)%'
+            $translationContext: '%env(GEMINI_TRANSLATION_CONTEXT)%'
+
+    # LicenseService
+    pimcorejp\TranslationBundle\Service\LicenseService:
+        arguments:
+            $productId: '%env(PIMCORE_STORE_PRODUCT_ID)%'
+
+    # UsageTrackingService
+    pimcorejp\TranslationBundle\Service\UsageTrackingService:
+        # 自動wiring
+
+    # Installer - publicにする
+    pimcorejp\TranslationBundle\Installer:
+        public: true  # ← これを追加
