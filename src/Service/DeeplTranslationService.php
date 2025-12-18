@@ -7,7 +7,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class DeeplTranslationService
 {
     private HttpClientInterface $httpClient;
-    private string $apiKey;
+    private ?string $apiKey;
     private string $apiUrl;
 
     public function __construct(HttpClientInterface $httpClient, ?string $deeplApiKey = null, bool $isFreeApi = false)
