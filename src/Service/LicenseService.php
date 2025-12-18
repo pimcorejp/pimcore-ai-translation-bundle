@@ -9,7 +9,7 @@ use Symfony\Component\HttpClient\HttpClient;
 class LicenseService
 {
     private CacheInterface $cache;
-    private string $productId;
+    private ?string $productId;
 
     public function __construct(CacheInterface $cache, ?string $productId = '')
     {
