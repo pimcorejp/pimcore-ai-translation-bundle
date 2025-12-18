@@ -828,7 +828,7 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
         }
 
         const xtype = component.getXType ? component.getXType() : "";
-        const translatableTypes = ["textfield", "textarea", "wysiwyg"];
+        const translatableTypes = ["textfield", "textareafield", "wysiwyg"];
 
         return translatableTypes.includes(xtype);
     },
