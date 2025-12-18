@@ -18,7 +18,7 @@ services:
         arguments:
             $httpClient: '@http_client'
             $deeplApiKey: '%env(default::DEEPL_API_KEY)%'
-            $isFreeApi: '%env(bool:DEEPL_FREE_API)%'
+            $isFreeApi: '%env(bool:default:false:DEEPL_FREE_API)%'
 
     # GeminiTranslationService
     pimcorejp\TranslationBundle\Service\GeminiTranslationService:
