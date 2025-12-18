@@ -11,7 +11,7 @@ class LicenseService
     private CacheInterface $cache;
     private string $productId;
 
-    public function __construct(CacheInterface $cache, string $productId = '')
+    public function __construct(CacheInterface $cache, ?string $productId = '')
     {
         $this->cache = $cache;
         $this->productId = $productId;
