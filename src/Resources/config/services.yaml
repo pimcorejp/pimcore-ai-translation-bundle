@@ -18,14 +18,14 @@ services:
         arguments:
             $httpClient: '@http_client'
             $deeplApiKey: '%env(default::DEEPL_API_KEY)%'
-            $isFreeApi: '%env(bool:default:false:DEEPL_FREE_API)%'
+            $isFreeApi: false
 
     # GeminiTranslationService
     pimcorejp\TranslationBundle\Service\GeminiTranslationService:
         arguments:
             $httpClient: '@http_client'
             $geminiApiKey: '%env(default::GEMINI_API_KEY)%'
-            $translationContext: '%env(default::GEMINI_TRANSLATION_CONTEXT)%'
+            $translationContext: ''
             
     # LicenseService
     pimcorejp\TranslationBundle\Service\LicenseService:
