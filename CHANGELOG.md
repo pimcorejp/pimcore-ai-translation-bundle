@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [1.2.0] - 2025-12-18
+
+### Added
+- Empty textarea fields are now included in translation
+- Block field support (textarea inside blocks can now be translated)
+
+### Changed
+- Switched Gemini API model from `gemini-2.5-flash` to `gemini-2.5-flash-lite` for better rate limits
+- API keys are now optional at installation time (no errors if not configured)
+- Simplified service configuration (removed unnecessary environment variables)
+
+### Fixed
+- API key validation errors when keys are not configured in `.env`
+- Empty textarea fields were being skipped during translation
+- Service initialization errors with missing environment variables
+- DEEPL_FREE_API and GEMINI_TRANSLATION_CONTEXT no longer required in `.env`
+
+### Technical Details
+- DeeplTranslationService and GeminiTranslationService now accept nullable API keys
+- Direct value assignment for `isFreeApi` and `translationContext` in services.yaml
+- Improved error handling for missing API configurations
+保存してください 📝
+
 ## [1.1.0] - 2025-12-17
 
 ### Added
