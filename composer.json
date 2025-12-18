@@ -1,5 +1,5 @@
 {
-    "name": "pimcorejp/pimcore-translation-bundle",
+    "name": "pimcorejp/pimcore-ai-translation-bundle",
     "type": "pimcore-bundle",
     "license": "proprietary",
     "description": "AI-powered translation bundle for PIMCORE with DeepL and Gemini support. Preserves HTML structure in WYSIWYG fields.",
