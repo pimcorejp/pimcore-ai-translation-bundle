@@ -7,9 +7,9 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class GeminiTranslationService
 {
     private HttpClientInterface $httpClient;
-    private string $apiKey;
+    private ?string $apiKey;
     private string $apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent';
-    private string $translationContext;
+    private ?string $translationContext;
 
     public function __construct(HttpClientInterface $httpClient, ?string $geminiApiKey = null, ?string $translationContext = '')
     {
