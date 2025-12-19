@@ -353,6 +353,8 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
         }
 
         // ソースタブからフィールドを収集
+
+        
         // ソースタブをアクティブにしてDOMを完全にロード
         const sourceTabPanel = sourceTab.ownerCt;
         if (sourceTabPanel && sourceTabPanel.setActiveTab) {
