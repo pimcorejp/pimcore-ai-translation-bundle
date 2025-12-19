@@ -255,7 +255,7 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
     },
 
     // ★ 既存の翻訳ロジック（メソッド名変更）
-    executeTranslation: function (targetTab, tabPanel, sourceLang, provider) {
+    executeTranslation: async function (targetTab, tabPanel, sourceLang, provider) {
         console.log("=== Starting translation execution ===");
         console.log("Target tab:", targetTab.title);
         console.log("Source locale:", sourceLang);
@@ -352,6 +352,15 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
             return;
         }
 
+        // ソースタブを一時的にアクティブ化
+        const currentActiveTab = tabPanel.getActiveTab();
+        tabPanel.setActiveTab(sourceTab);
+        
+        // DOM更新を待つ（非同期処理が必要）
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+
+
         // ソースタブからフィールドを収集
         console.log("=== Collecting source fields ===");
         const sourceTranslatableFields = [];
@@ -434,6 +443,8 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
         );
         console.log("Source copyable fields:", sourceCopyableFields.length);
         console.log("Source Quill fields:", sourceQuillFields.length);
+
+        tabPanel.setActiveTab(currentActiveTab);
 
         // ターゲットタブからフィールドを収集
         console.log("=== Collecting target fields ===");
@@ -691,23 +702,34 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
                                             .replace(/\n/g, "<br>") +
                                         "</p>";
                                 }
+                                // ★ 修正: ターゲットタブを再度アクティブにして確実に正しいエディタを取得
+                                const currentTab = tabPanel.getActiveTab();
+                                if (currentTab !== targetTab) {
+                                    tabPanel.setActiveTab(targetTab);
+                                }
+                                
+                                // DOM更新を待つ
+                                setTimeout(() => {
+                                    // ターゲットタブのQuillエディタを再取得
+                                    const targetTabEl = targetTab.getEl();
+                                    if (targetTabEl) {
+                                        const quillEditors = targetTabEl.dom.querySelectorAll(".ql-editor");
+                                        const targetIndex = fieldMapping.filter(m => m.type === "quill").indexOf(mapping);
+                                        
+                                        if (quillEditors[targetIndex]) {
+                                            const targetEditor = quillEditors[targetIndex];
+                                            targetEditor.innerHTML = htmlToSet;
 
-                                mapping.targetField.element.innerHTML =
-                                    htmlToSet;
+                                            const event = new Event("input", { bubbles: true });
+                                            targetEditor.dispatchEvent(event);
 
-                                const event = new Event("input", {
-                                    bubbles: true,
-                                });
-                                mapping.targetField.element.dispatchEvent(
-                                    event
-                                );
-
-                                const changeEvent = new Event("text-change", {
-                                    bubbles: true,
-                                });
-                                mapping.targetField.element.dispatchEvent(
-                                    changeEvent
-                                );
+                                            const changeEvent = new Event("text-change", { bubbles: true });
+                                            targetEditor.dispatchEvent(changeEvent);
+                                            
+                                            console.log(`✓ Quill field ${targetIndex} updated in target tab`);
+                                        }
+                                    }
+                                }, 50);
 
                                 updateCount++;
                             }
