@@ -40,6 +40,7 @@ class UsageTrackingService
         
         $yearMonth = date('Y-m');
         $domain = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $domain = preg_replace('/:\d+$/', '', $domain);
         $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
 
         $geminiUsage = $db->fetchOne("
@@ -159,6 +160,7 @@ class UsageTrackingService
         }
 
         $domain = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $domain = preg_replace('/:\d+$/', '', $domain);
         $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
 
         $results = $db->fetchAllAssociative("
@@ -192,6 +194,7 @@ class UsageTrackingService
         $db = Db::get();
         
         $domain = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $domain = preg_replace('/:\d+$/', '', $domain);
         $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
 
         return $db->fetchAllAssociative("
