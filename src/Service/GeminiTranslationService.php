@@ -8,7 +8,8 @@ class GeminiTranslationService
 {
     private HttpClientInterface $httpClient;
     private ?string $apiKey;
-    private string $apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent';
+    /* private string $apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent';*/
+    private string $apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemma-3-4b:generateContent';
     private ?string $translationContext;
 
     public function __construct(HttpClientInterface $httpClient, ?string $geminiApiKey = null, ?string $translationContext = '')
