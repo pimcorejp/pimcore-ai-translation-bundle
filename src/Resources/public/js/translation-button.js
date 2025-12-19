@@ -702,34 +702,23 @@ translateTab: function (targetTab, tabPanel, sourceLang, provider) {
                                             .replace(/\n/g, "<br>") +
                                         "</p>";
                                 }
-                                // ★ 修正: ターゲットタブを再度アクティブにして確実に正しいエディタを取得
-                                const currentTab = tabPanel.getActiveTab();
-                                if (currentTab !== targetTab) {
-                                    tabPanel.setActiveTab(targetTab);
-                                }
+
+                                // ★ 修正: スコープ問題を解決
+                                const currentMapping = mapping;
+                                const htmlContent = htmlToSet;
                                 
-                                // DOM更新を待つ
-                                setTimeout(() => {
-                                    // ターゲットタブのQuillエディタを再取得
-                                    const targetTabEl = targetTab.getEl();
-                                    if (targetTabEl) {
-                                        const quillEditors = targetTabEl.dom.querySelectorAll(".ql-editor");
-                                        const targetIndex = fieldMapping.filter(m => m.type === "quill").indexOf(mapping);
-                                        
-                                        if (quillEditors[targetIndex]) {
-                                            const targetEditor = quillEditors[targetIndex];
-                                            targetEditor.innerHTML = htmlToSet;
+                                // 即座にターゲットエディタに書き込む
+                                if (currentMapping.targetField && currentMapping.targetField.element) {
+                                    currentMapping.targetField.element.innerHTML = htmlContent;
 
-                                            const event = new Event("input", { bubbles: true });
-                                            targetEditor.dispatchEvent(event);
+                                    const event = new Event("input", { bubbles: true });
+                                    currentMapping.targetField.element.dispatchEvent(event);
 
-                                            const changeEvent = new Event("text-change", { bubbles: true });
-                                            targetEditor.dispatchEvent(changeEvent);
-                                            
-                                            console.log(`✓ Quill field ${targetIndex} updated in target tab`);
-                                        }
-                                    }
-                                }, 50);
+                                    const changeEvent = new Event("text-change", { bubbles: true });
+                                    currentMapping.targetField.element.dispatchEvent(changeEvent);
+                                    
+                                    console.log(`✓ Quill field updated with ${htmlContent.length} chars`);
+                                }
 
                                 updateCount++;
                             }
